@@ -1,0 +1,9 @@
+.main_container {
+  width: calc(100vw - 232px);
+  background-color: #181818;
+  height: 527px;
+  overflow-y: scroll;
+  .wrapper {
+    padding-top: 4em;
+  }
+}

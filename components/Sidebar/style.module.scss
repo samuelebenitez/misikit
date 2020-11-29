@@ -1,0 +1,148 @@
+.sidebar_container {
+  width: 232px;
+  background-color: #000;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  .sidebar_banner_container {
+    width: 135px;
+    margin: 0 20px;
+  }
+  .sidebar_buttons {
+    color: rgba(255, 255, 255, 0.76);
+    width: 100%;
+    list-style: none;
+    padding: 0 10px;
+    .li {
+      font-size: 0.9em;
+      width: 100%;
+      padding: 0 10px;
+      height: 40px;
+      margin-bottom: 1px;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.5s;
+      &:hover {
+        color: #fff;
+
+        background-color: rgba(255, 255, 255, 0.24);
+      }
+      .li_icon {
+        margin: 5px 20px 0 0;
+      }
+    }
+  }
+  .sidebar_playlists_area {
+    padding: 0 10px;
+    font-weight: bold;
+    .sidebar_playlists_area_title {
+      color: #fff;
+      font-size: 0.8em;
+      margin: 1em;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+    .sidebar_playlists_area_crear {
+      // background: linear-gradient(135deg, #450af5, #c4efd9);
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.76);
+      display: flex;
+      margin: 1em 10px;
+      font-size: 0.9em;
+      align-items: center;
+      filter: brightness(0.8);
+      transition: 0.5s;
+      &:hover {
+        filter: brightness(1);
+      }
+      .crear_icon {
+        background-color: rgba(255, 255, 255, 0.527);
+        width: 32px;
+        height: 32px;
+        color: #fff;
+        text-align: center;
+        margin-right: 15px;
+        color: #000;
+        font-size: 2em;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        .p {
+          position: absolute;
+          left: 50%;
+          top: 38%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    .sidebar_playlists_area_likes {
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.76);
+      display: flex;
+      margin: 1em 10px;
+      font-size: 0.9em;
+      align-items: center;
+      transition: 0.5s;
+      filter: brightness(0.8);
+      &:hover {
+        filter: brightness(1);
+      }
+      .likes_icon {
+        background: linear-gradient(135deg, #450af5, #c4efd9);
+        width: 32px;
+        height: 32px;
+        color: #fff;
+        text-align: center;
+        margin-right: 15px;
+        font-size: 1.2em;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        .p {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+  .hr {
+    width: 80%;
+    color: rgba(255, 255, 255, 0.336);
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.336);
+    border: none;
+  }
+  .playlists_list {
+    color: white;
+    overflow-y: scroll;
+    height: 150px;
+    padding: 0 23px;
+
+    scroll-margin: 0 50px;
+    &::-webkit-scrollbar {
+      background: #000;
+      width: 17px;
+      margin: 0 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.342);
+      border: 2px solid black;
+    }
+    .list_item {
+      filter: brightness(0.8);
+      transition: 0.5s;
+      cursor: pointer;
+      font-size: 1em;
+      word-spacing: 1px;
+      &:hover {
+        filter: brightness(1);
+      }
+    }
+  }
+}

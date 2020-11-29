@@ -1,0 +1,14 @@
+.container {
+  padding: 1em 2em;
+  .title_ {
+    .title {
+      margin: 0 0 0.5em 0;
+      color: #fff;
+      font-size: 1.4em;
+    }
+  }
+  .cards_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

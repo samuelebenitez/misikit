@@ -1,0 +1,40 @@
+$color-back1: #444343;
+$color-back2: #1db954;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+
+.login_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-back1;
+  display: flex;
+  outline: none;
+  background-image: url(../public/waves.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.login_button {
+  outline: none;
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 500px;
+  border: 1px solid $color-back2;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  transition: 0.5s;
+
+  cursor: pointer;
+}
+
+.login_link {
+  text-decoration: none;
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  color: $color-back2;
+  font-size: 1.1em;
+}
