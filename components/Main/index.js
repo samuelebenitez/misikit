@@ -11,7 +11,7 @@ export default function Main() {
   );
   const { items } = userRelatedArtists;
   const recentlyPlayed = userRecentlyPlayed.items;
-  console.log(recentlyPlayed);
+  //console.log(recentlyPlayed);
   //const recently = recentlyPlayed.map((i) => i.track);
 
   //const trackImgs = recently.map((i) => i.album.images[0]);
