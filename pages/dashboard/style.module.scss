@@ -1,4 +1,6 @@
 .dashboard_container {
-  display: flex;
-  overflow-x: hidden;
+  overflow: hidden;
+  .dashboard {
+    display: flex;
+  }
 }

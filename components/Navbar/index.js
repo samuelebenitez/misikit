@@ -41,7 +41,9 @@ export default function Navbar({ pos }) {
                 alt=""
               />
             ))}
-          <p className={style.items_user_name}>{display_name}</p>
+          <p className={style.items_user_name}>
+            {display_name && display_name}
+          </p>
           <span onClick={handleToggle} className={style.items_user_arrow}>
             {showUserToggle ? upArrowIcon : downArrowIcon}
           </span>

@@ -7,9 +7,12 @@ import {
   createPlaylistIcon,
   spotifyLogo,
 } from "../../public/icons-svg.js";
+import { useContext } from "react";
+import DataSpotyContext from "../../contexts/dataspotycontext";
 
-const Sidebar = ({ userPlaylists }) => {
-  const { items } = userPlaylists;
+const Sidebar = () => {
+  const { userPlaylists } = useContext(DataSpotyContext);
+
   return (
     <section className={style.sidebar_container}>
       <div className={style.sidebar_banner_container}>
@@ -44,8 +47,8 @@ const Sidebar = ({ userPlaylists }) => {
       </div>
       <hr className={style.hr} />
       <div className={style.playlists_list}>
-        {items &&
-          items.map((p, key) => (
+        {userPlaylists &&
+          userPlaylists.map((p, key) => (
             <p className={style.list_item} key={key}>
               {p.name}
             </p>

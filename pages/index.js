@@ -12,7 +12,7 @@ export default function Home() {
       <button className={style.login_button}>
         <a
           className={style.login_link}
-          href={`${baseUrl}?client_id=${clientId}&scope=user-top-read user-read-recently-played&response_type=${responseType}&redirect_uri=${redirectUri}`}
+          href={`${baseUrl}?client_id=${clientId}&scope=user-top-read user-read-recently-played user-library-read&response_type=${responseType}&redirect_uri=${redirectUri}`}
         >
           Touch me for login!
         </a>
