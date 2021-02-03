@@ -1,9 +1,9 @@
 import style from "../dashboard/style.module.scss";
 import Sidebar from "../../components/Sidebar";
-import Main from "../../components/Main";
 import Player from "../../components/Player";
+import SeeAll from "../../components/SeeAll";
 
-export default function cardsComplete() {
+export default function seeAll() {
   return (
     <div className={style.dashboard_container}>
       <div className={style.dashboard}>
@@ -11,7 +11,7 @@ export default function cardsComplete() {
           <Sidebar />
         </section>
         <section className={style.main}>
-          <Main />
+          <SeeAll />
         </section>
       </div>
       <div className={style.player_container}>

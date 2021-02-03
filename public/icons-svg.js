@@ -101,6 +101,11 @@ export const playIcon = (
     <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="#FFF"></polygon>
   </svg>
 );
+export const playIcon1 = (
+  <svg height="36" role="img" width="36" viewBox="0 0 24 24" aria-hidden="true">
+    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="#FFF"></polygon>
+  </svg>
+);
 
 // PLAYER ICONS
 

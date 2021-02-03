@@ -8,8 +8,10 @@ import {
   rightArrowIcon,
 } from "../../public/icons-svg.js";
 import DataSpotyContext from "../../contexts/dataspotycontext.js";
+import { useRouter } from "next/router";
 
 export default function Navbar({ pos }) {
+  const router = useRouter();
   const { userData } = useContext(DataSpotyContext);
   const [showUserToggle, setShowUserToggle] = useState(false);
   const { display_name, images } = userData;
@@ -28,7 +30,9 @@ export default function Navbar({ pos }) {
     >
       <div className={style.nav_container_items}>
         <div className={style.nav_container_items_buttons}>
-          <button className={style.button}>{leftArrowIcon}</button>
+          <button onClick={() => router.back()} className={style.button}>
+            {leftArrowIcon}
+          </button>
           <button className={style.button}>{rightArrowIcon}</button>
         </div>
         <div className={style.nav_container_items_user}>

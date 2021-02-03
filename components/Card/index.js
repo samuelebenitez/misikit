@@ -1,8 +1,12 @@
 import style from "./style.module.scss";
+import { useContext } from "react";
+import DataSpotyContext from "../../contexts/dataspotycontext.js";
 import { playIcon } from "../../public/icons-svg.js";
+import Link from "next/link";
 
 export default function Card({ content, cardType }) {
-  const { images, name, album, artists, publisher } = content;
+  const { accessToken } = useContext(DataSpotyContext);
+  const { images, name, album, artists, publisher, id } = content;
 
   switch (cardType) {
     case "artist":
@@ -17,8 +21,9 @@ export default function Card({ content, cardType }) {
           >
             <div className={style.button_repro}>{playIcon}</div>
           </div>
-
-          <h4 className={style.h4}>{name}</h4>
+          <Link href={`/${cardType}s/${id}&${accessToken}`}>
+            <h4 className={style.h4}>{name}</h4>
+          </Link>
           <p className={style.p_content}>
             <p className={style.p}>Artista</p>
           </p>
@@ -38,7 +43,9 @@ export default function Card({ content, cardType }) {
             <div className={style.button_repro}>{playIcon}</div>
           </div>
 
-          <h4 className={style.h4}>{name}</h4>
+          <Link href={`/${cardType}s/${id}&${accessToken}`}>
+            <h4 className={style.h4}>{name}</h4>
+          </Link>
           <p className={style.p_content}>
             {artists.slice(0, 2).map((a, key) => (
               <p key={key} className={style.p}>
@@ -62,7 +69,9 @@ export default function Card({ content, cardType }) {
             <div className={style.button_repro}>{playIcon}</div>
           </div>
 
-          <h4 className={style.h4}>{name}</h4>
+          <Link href={`/${cardType}s/${id}&${accessToken}`}>
+            <h4 className={style.h4}>{name}</h4>
+          </Link>
           <p className={style.p_content}>
             <p className={style.p_podcastInfo}>{publisher}</p>
           </p>
@@ -82,7 +91,9 @@ export default function Card({ content, cardType }) {
             <div className={style.button_repro}>{playIcon}</div>
           </div>
 
-          <h4 className={style.h4}>{name}</h4>
+          <Link href={`/${cardType}s/${id}&${accessToken}`}>
+            <h4 className={style.h4}>{name}</h4>
+          </Link>
           <p className={style.p_content}>
             {artists.slice(0, 2).map((a, key) => (
               <p key={key} className={style.p}>

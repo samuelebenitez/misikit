@@ -3,7 +3,6 @@ import style from "./style.module.scss";
 import CardsContainer from "../CardsContainer";
 import { useContext } from "react";
 import DataSpotyContext from "../../contexts/dataspotycontext.js";
-import { useState, useEffect } from "react";
 
 export default function Main() {
   const {
@@ -11,6 +10,7 @@ export default function Main() {
     userRecentlyPlayed,
     userShows,
     userAlbums,
+    accessToken,
   } = useContext(DataSpotyContext);
 
   const recentlyPlayed =
@@ -25,13 +25,23 @@ export default function Main() {
         <CardsContainer
           label="Artistas relacionados"
           content={userRelatedArtists}
+          accessToken={accessToken}
         />
         <CardsContainer
           label="Escuchados recientemente"
           content={recentlyPlayed}
+          accessToken={accessToken}
         />
-        <CardsContainer label="Tus podcast" content={podcasts} />
-        <CardsContainer label="Albums guardados" content={savedAlbums} />
+        <CardsContainer
+          label="Podcasts"
+          content={podcasts}
+          accessToken={accessToken}
+        />
+        <CardsContainer
+          label="Albums guardados"
+          content={savedAlbums}
+          accessToken={accessToken}
+        />
       </div>
     </div>
   );
