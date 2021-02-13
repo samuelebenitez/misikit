@@ -2,9 +2,18 @@ import Sidebar from "../../components/Sidebar";
 import Player from "../../components/Player";
 import style from "../dashboard/style.module.scss";
 import CardInfo from "../../components/CardInfo";
-import { useState } from "react";
 
 export default function cardId(props) {
+  const {
+    data,
+    cardtype,
+    dataTopTracks,
+    dataTrackInfo,
+    infoFollow,
+    artistAlbums,
+    artistRelatedArtists,
+  } = props;
+  console.info(artistAlbums);
   return (
     <div className={style.dashboard_container}>
       <div className={style.dashboard}>
@@ -42,12 +51,22 @@ export async function getServerSideProps({ req, params }) {
     headers
   );
   const dataInfo = await resInfo.json();
+
   // Tracks del artista
   const resTopTracks = await fetch(
     `https://api.spotify.com/v1/artists/${realCardId}/top-tracks?market=es`,
     headers
   );
-  const dataTopTracks = await resTopTracks.json();
+  const dataTopTracks =
+    cardtype == "artists" ? await resTopTracks.json() : null;
+
+  // Información del track
+  const resTrackInfo = await fetch(
+    `https://api.spotify.com/v1/tracks/${realCardId}`,
+    headers
+  );
+  const dataTrackInfo = await resTrackInfo.json();
+
   // Información sobre si el usuario sigue al artista;
   const resFollow = await fetch(
     `https://api.spotify.com/v1/me/following/contains?type=artist&ids=${realCardId}`,
@@ -69,12 +88,13 @@ export async function getServerSideProps({ req, params }) {
 
   return {
     props: {
-      data: dataInfo,
+      data: dataInfo || null,
       cardtype,
-      dataTopTracks: dataTopTracks.tracks,
-      infoFollow,
-      artistAlbums: artistAlbums.items,
-      artistRelatedArtists: relatedArtists.artists,
+      dataTopTracks: dataTopTracks?.tracks || null,
+      infoFollow: infoFollow[0] || null,
+      artistAlbums: artistAlbums.items || null,
+      artistRelatedArtists: relatedArtists.artists || null,
+      dataTrackInfo,
     },
   };
 }
