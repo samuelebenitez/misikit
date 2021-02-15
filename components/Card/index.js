@@ -12,15 +12,18 @@ export default function Card({ content, cardType }) {
     case "artist":
       return (
         <div className={style.card_container}>
-          <div
-            className={style.card_img}
-            style={{
-              backgroundImage: `url(${images[1].url})`,
-              borderRadius: "50%",
-            }}
-          >
-            <div className={style.button_repro}>{playIcon}</div>
-          </div>
+          <Link href={`/${cardType}s/${id}&${accessToken}`}>
+            <div
+              className={style.card_img}
+              style={{
+                backgroundImage: `url(${images[1].url})`,
+                borderRadius: "50%",
+              }}
+            >
+              <div className={style.button_repro}>{playIcon}</div>
+            </div>
+          </Link>
+
           <Link href={`/${cardType}s/${id}&${accessToken}`}>
             <h4 className={style.h4}>{name}</h4>
           </Link>
@@ -33,22 +36,24 @@ export default function Card({ content, cardType }) {
     case "track":
       return (
         <div className={style.card_container}>
-          <div
-            className={style.card_img}
-            style={{
-              backgroundImage: `url(${album.images[1].url})`,
-              borderRadius: "1.5%",
-            }}
-          >
-            <div className={style.button_repro}>{playIcon}</div>
-          </div>
+          <Link href={`/${cardType}s/${id}&${accessToken}`}>
+            <div
+              className={style.card_img}
+              style={{
+                backgroundImage: `url(${album.images[1].url})`,
+                borderRadius: "1.5%",
+              }}
+            >
+              <div className={style.button_repro}>{playIcon}</div>
+            </div>
+          </Link>
 
           <Link href={`/${cardType}s/${id}&${accessToken}`}>
             <h4 className={style.h4}>{name}</h4>
           </Link>
           <p className={style.p_content}>
             {artists.slice(0, 2).map((a, key) => (
-              <p key={key} className={style.p}>
+              <p key={key} className={style.p} title={a.name}>
                 {a.name}
               </p>
             ))}
@@ -59,15 +64,17 @@ export default function Card({ content, cardType }) {
     case "show":
       return (
         <div className={style.card_container}>
-          <div
-            className={style.card_img}
-            style={{
-              backgroundImage: `url(${images[1].url})`,
-              borderRadius: "10%",
-            }}
-          >
-            <div className={style.button_repro}>{playIcon}</div>
-          </div>
+          <Link href={`/${cardType}s/${id}&${accessToken}`}>
+            <div
+              className={style.card_img}
+              style={{
+                backgroundImage: `url(${images[1].url})`,
+                borderRadius: "10%",
+              }}
+            >
+              <div className={style.button_repro}>{playIcon}</div>
+            </div>
+          </Link>
 
           <Link href={`/${cardType}s/${id}&${accessToken}`}>
             <h4 className={style.h4}>{name}</h4>
@@ -81,15 +88,17 @@ export default function Card({ content, cardType }) {
     case "album":
       return (
         <div className={style.card_container}>
-          <div
-            className={style.card_img}
-            style={{
-              backgroundImage: `url(${images[1].url})`,
-              borderRadius: "1.5%",
-            }}
-          >
-            <div className={style.button_repro}>{playIcon}</div>
-          </div>
+          <Link href={`/${cardType}s/${id}&${accessToken}`}>
+            <div
+              className={style.card_img}
+              style={{
+                backgroundImage: `url(${images[1].url})`,
+                borderRadius: "1.5%",
+              }}
+            >
+              <div className={style.button_repro}>{playIcon}</div>
+            </div>
+          </Link>
 
           <Link href={`/${cardType}s/${id}&${accessToken}`}>
             <h4 className={style.h4}>{name}</h4>

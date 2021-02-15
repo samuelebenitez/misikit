@@ -13,7 +13,6 @@ export default function cardId(props) {
     artistAlbums,
     artistRelatedArtists,
   } = props;
-  console.info(artistAlbums);
   return (
     <div className={style.dashboard_container}>
       <div className={style.dashboard}>

@@ -48,6 +48,10 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .p_content {
     display: flex;
