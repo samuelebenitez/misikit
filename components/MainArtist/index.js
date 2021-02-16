@@ -8,7 +8,12 @@ import {
   durationIcon,
 } from "../../public/icons-svg";
 
+import { useContext } from "react";
+import DataSpotyContext from "../../contexts/dataspotycontext.js";
+
 export default function MainArtist({ cardData, convierteMSaMIN }) {
+  const { accessToken } = useContext(DataSpotyContext);
+
   const {
     infoFollow,
     dataTopTracks,
@@ -16,7 +21,8 @@ export default function MainArtist({ cardData, convierteMSaMIN }) {
     artistAlbums,
     artistRelatedArtists,
   } = cardData;
-  const { images, name, followers } = data;
+  const { images, name, followers, id } = data;
+
   return (
     <div className={style.cardInfo__container}>
       <>
@@ -59,10 +65,17 @@ export default function MainArtist({ cardData, convierteMSaMIN }) {
             </ol>
           </div>
           <div className={style.albums_container}>
-            <CardsContainer label="Discografía" content={artistAlbums} />
             <CardsContainer
-              label={`Artistas relacionados a ${name}`}
+              label="Discografía"
+              content={artistAlbums}
+              accessToken={accessToken}
+              artistId={id}
+            />
+            <CardsContainer
+              label={`Artistas relacionados`}
               content={artistRelatedArtists}
+              accessToken={accessToken}
+              artistId={id}
             />
           </div>
         </section>

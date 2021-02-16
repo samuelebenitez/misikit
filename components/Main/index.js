@@ -23,7 +23,7 @@ export default function Main() {
       <Navbar />
       <div className={style.wrapper}>
         <CardsContainer
-          label="Artistas relacionados"
+          label="Tus artistas"
           content={userRelatedArtists}
           accessToken={accessToken}
         />

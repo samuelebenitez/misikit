@@ -1,6 +1,145 @@
 .player_container {
-  background-color: #282828;
+  background-color: #1f1e1e;
   border-top: 1px solid #000;
   height: 102px;
   display: flex;
+  .player_left {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+
+    .img_container {
+      height: 60px;
+      width: 60px;
+      margin-right: 1em;
+      background-size: contain;
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .info_current {
+      .song_name {
+        margin: 0;
+        color: white;
+      }
+      .artists_container {
+        display: flex;
+        align-items: center;
+        .artists {
+          margin: 0 0.2em;
+          font-size: 0.8em;
+          color: rgba(255, 255, 255, 0.568);
+        }
+      }
+    }
+  }
+  .player_center {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    .player_buttons {
+      flex: 0.5;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 1em 0.5em 0.5em 0.5em;
+      svg {
+        fill: gray;
+        transition: 0.5s;
+        &:hover {
+          fill: white;
+        }
+      }
+      button {
+        border-radius: 50%;
+        background-color: white;
+        border: none;
+        height: 35px;
+        width: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          transform: scale(1.1);
+        }
+        svg {
+          polygon {
+            fill: black;
+          }
+        }
+      }
+    }
+    .progress_bar {
+      flex: 0.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      progress {
+        width: calc(100% - 20%);
+        height: 3px;
+      }
+
+      progress:indeterminate {
+        background-color: gray;
+        border-radius: 10px;
+      }
+
+      progress::-webkit-progress-bar {
+        background-color: gray;
+        border-radius: 7px;
+      }
+      progress::-webkit-progress-value {
+        background-color: blue;
+        border-radius: 7px;
+      }
+    }
+  }
+  .player_right {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      fill: gray;
+      transition: 0.5s;
+      &:hover {
+        fill: white;
+      }
+    }
+
+    .progress_container {
+      display: flex;
+      align-items: center;
+      margin: 0 0.5em;
+
+      svg {
+        fill: gray;
+        transition: 0.5s;
+        &:hover {
+          fill: white;
+        }
+      }
+
+      progress {
+        margin: 0 0.5em;
+        height: 3px;
+      }
+      progress:indeterminate {
+        background-color: gray;
+        border-radius: 10px;
+      }
+
+      progress::-webkit-progress-bar {
+        background-color: gray;
+        border-radius: 7px;
+      }
+      progress::-webkit-progress-value {
+        background-color: blue;
+        border-radius: 7px;
+      }
+    }
+  }
 }

@@ -8,32 +8,17 @@ import {
 } from "../../public/icons-svg";
 
 export default function MainAlbum({ cardData, convierteMSaMIN }) {
-  const {
-    cardtype,
-    infoFollow,
-    dataTopTracks,
-    data,
-    artistAlbums,
-    artistRelatedArtists,
-  } = cardData;
+  const { data } = cardData;
   const {
     images,
     name,
-    album,
     artists,
-    publisher,
-    id,
-    followers,
-    duration_ms,
-    description,
-    episodes,
     type,
     release_date,
     total_tracks,
     tracks,
   } = data;
 
-  console.log(data);
   return (
     <div className={style.cardInfo__container}>
       <section className={style.top_container}>
@@ -50,7 +35,9 @@ export default function MainAlbum({ cardData, convierteMSaMIN }) {
                 </p>
               ))}
               <p>{release_date} ·</p>
-              <p>{total_tracks} Canciones ·</p>
+              <p>
+                {total_tracks} {total_tracks == 1 ? "Canción" : "Canciones "}
+              </p>
             </div>
           </div>
         </div>

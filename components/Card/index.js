@@ -54,7 +54,7 @@ export default function Card({ content, cardType }) {
           <p className={style.p_content}>
             {artists.slice(0, 2).map((a, key) => (
               <p key={key} className={style.p} title={a.name}>
-                {a.name}
+                {a.name} ·
               </p>
             ))}
           </p>
@@ -106,7 +106,7 @@ export default function Card({ content, cardType }) {
           <p className={style.p_content}>
             {artists.slice(0, 2).map((a, key) => (
               <p key={key} className={style.p}>
-                {a.name}
+                {a.name} ·
               </p>
             ))}
           </p>

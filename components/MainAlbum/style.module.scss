@@ -63,6 +63,7 @@ $WorkSans: "Work Sans", sans-serif;
         padding-left: 2em;
         font-size: 1em;
         letter-spacing: -1px;
+        border: 1px solid red;
       }
       .cards_container {
         display: flex;
@@ -97,9 +98,14 @@ $WorkSans: "Work Sans", sans-serif;
           margin: 0 0 0.3em 0;
           transform: scaleY(1.1);
           padding: 0 1em 0 0;
+          max-height: 150px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-break: break-all;
         }
         .album_info__ {
           display: flex;
+          padding: 0 0 1em 0;
           .artists {
             font-weight: 500;
             color: white;
