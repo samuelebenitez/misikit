@@ -18,10 +18,9 @@ export default function CardsContainer({
         </Link>
       </div>
       <div className={style.cards_container}>
-        {content &&
-          content
-            .slice(0, 5)
-            .map((i, key) => <Card key={key} content={i} cardType={i.type} />)}
+        {content?.slice(0, 5).map((i, key) => (
+          <Card key={key} content={i} cardType={i.type} />
+        ))}
       </div>
     </div>
   );

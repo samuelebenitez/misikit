@@ -8,6 +8,10 @@
       margin: 0 0 0.5em 0;
       color: #fff;
       font-size: 1.4em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
       cursor: pointer;
       &:hover {
         text-decoration: underline;
@@ -21,6 +25,7 @@
       font-weight: bold;
       letter-spacing: 1px;
       text-align: center;
+      white-space: nowrap;
       cursor: pointer;
       &:hover {
         text-decoration: underline;
@@ -29,6 +34,7 @@
   }
   .cards_container {
     display: grid;
+    gap: 1em;
     grid-template-columns: repeat(5, 1fr);
   }
 }

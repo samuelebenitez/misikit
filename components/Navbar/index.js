@@ -21,19 +21,12 @@ export default function Navbar({ pos }) {
   }
 
   return (
-    <nav
-      className={style.nav_container}
-      // style={{
-      //   backgroundColor:
-      //     pos === "top" ? " rgba(18, 18, 18, 0)" : "rgba(18, 18, 18, 1)",
-      // }}
-    >
+    <nav className={style.nav_container}>
       <div className={style.nav_container_items}>
         <div className={style.nav_container_items_buttons}>
           <button onClick={() => router.back()} className={style.button}>
             {leftArrowIcon}
           </button>
-          <button className={style.button}>{rightArrowIcon}</button>
         </div>
         <div className={style.nav_container_items_user}>
           {images &&

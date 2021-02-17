@@ -9,19 +9,48 @@ import {
 } from "../../public/icons-svg.js";
 import { useContext } from "react";
 import DataSpotyContext from "../../contexts/dataspotycontext";
+import { useRouter } from "next/router";
 
 const Sidebar = () => {
-  const { userPlaylists } = useContext(DataSpotyContext);
+  const { userPlaylists, accessToken } = useContext(DataSpotyContext);
+  const router = useRouter();
+  const baseUrl = `https://accounts.spotify.com/authorize`;
+  const clientId = `3e8826969cda44dd9759e854441c1de8`;
+  const responseType = `token`;
+  const redirectUri = `http://localhost:3000/dashboard`;
+
+  console.log(router);
+
+  // http://localhost:3000/dashboard#access_token=BQBMJgU0hTNSLA_Q4LM5oQX3f2YyNi_OM30iCHir7Aur0DJVjK5QX6eUH6ClTq-GyDiEc9Gcsw36LnCVfwdZI3mEql3xgPb9qCo8kdL4LJH6CwakTpNataSIeBOCcVnWVIzP7IWTt9CL80_0Hz_dt3RofDfLQYjAR_-nyAVStfs&token_type=Bearer&expires_in=3600
 
   return (
     <section className={style.sidebar_container}>
       <div className={style.sidebar_banner_container}>
-        <span className={style.banner}>{spotifyLogo}</span>
+        <span
+          onClick={() =>
+            router.push(
+              `${redirectUri}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
+            )
+          }
+          className={style.banner}
+        >
+          {spotifyLogo}
+        </span>
       </div>
 
       <ul className={style.sidebar_buttons}>
         <li className={style.li}>
-          <span className={style.li_icon}>{homeIcon}</span> Inicio
+          <span
+            onClick={() =>
+              router.push(
+                `${redirectUri}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
+              )
+            }
+            className={style.li_icon}
+          >
+            {homeIcon}
+          </span>{" "}
+          Inicio
         </li>
         <li className={style.li}>
           <span className={style.li_icon}>{searchIcon}</span> Buscar
