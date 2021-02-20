@@ -5,8 +5,8 @@ export default function Home() {
   const baseUrl = `https://accounts.spotify.com/authorize`;
   const clientId = `3e8826969cda44dd9759e854441c1de8`;
   const responseType = `token`;
-  const redirectUriDev = `http:%2F%2Flocalhost:3000%2Fdashboard`;
-  const redirectUriProd = "http://misikit.samuelebenitez.vercel.app/dashboard";
+  const redirectUriDev = `http://localhost:3000/dashboard`;
+  const redirectUriProd = "https://misikit.samuelebenitez.vercel.app/dashboard";
 
   // https:%2F%2Fmisikit.samuelebenitez.vercel.app/dashboard
 
