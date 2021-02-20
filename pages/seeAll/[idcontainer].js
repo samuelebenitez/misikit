@@ -2,7 +2,6 @@ import style from "../dashboard/style.module.scss";
 import Sidebar from "../../components/Sidebar";
 import Player from "../../components/Player";
 import SeeAll from "../../components/SeeAll";
-import { useRouter } from "next/router";
 
 export default function seeAll() {
   return (
