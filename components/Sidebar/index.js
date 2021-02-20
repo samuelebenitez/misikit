@@ -28,7 +28,7 @@ const Sidebar = () => {
         <span
           onClick={() =>
             router.push(
-              `${redirectUriProd}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
+              `${redirectUriDev}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
             )
           }
           className={style.banner}
@@ -75,12 +75,11 @@ const Sidebar = () => {
       </div>
       <hr className={style.hr} />
       <div className={style.playlists_list}>
-        {userPlaylists &&
-          userPlaylists.map((p, key) => (
-            <p className={style.list_item} key={key}>
-              {p.name}
-            </p>
-          ))}
+        {userPlaylists?.map((p, key) => (
+          <p className={style.list_item} key={key}>
+            {p.name}
+          </p>
+        ))}
       </div>
     </section>
   );
