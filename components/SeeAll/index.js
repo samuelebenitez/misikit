@@ -16,9 +16,12 @@ export default function SeeAll() {
   } = useContext(DataSpotyContext);
 
   const router = useRouter();
-  const { idcontainer } = router.query;
-  const [containerType] = idcontainer.split(/[&]/);
-  const [, , artistId] = idcontainer.split(/[&]/);
+  const idcontainer = router?.query.idcontainer;
+  const containerType = idcontainer?.split(/[&]/)[0];
+  const artistId = idcontainer?.split(/[&]/)[2];
+  console.log(router);
+  console.log(containerType);
+  console.log(artistId);
 
   const [artistAlbums, setArtistsAlbums] = useState();
   const [relatedArtists, setRelatedArtists] = useState();
@@ -49,7 +52,7 @@ export default function SeeAll() {
     setRelatedArtists(relatedArtists.artists);
   }, []);
 
-  switch (containerType && containerType) {
+  switch (containerType) {
     case "Tus artistas":
       return (
         <div className={style.main_container}>
@@ -57,7 +60,7 @@ export default function SeeAll() {
           <div className={style.wrapper}>
             <h1 className={style.title}>{containerType}</h1>
             <div className={style.cards_container}>
-              {userRelatedArtists.map((a, key) => (
+              {userRelatedArtists?.map((a, key) => (
                 <Card key={key} content={a} cardType={a.type} />
               ))}
             </div>
@@ -72,7 +75,7 @@ export default function SeeAll() {
           <div className={style.wrapper}>
             <h1 className={style.title}>{containerType}</h1>
             <div className={style.cards_container}>
-              {recentlyPlayed.map((a, key) => (
+              {recentlyPlayed?.map((a, key) => (
                 <Card key={key} content={a} cardType={a.type} />
               ))}
             </div>
@@ -87,7 +90,7 @@ export default function SeeAll() {
           <div className={style.wrapper}>
             <h1 className={style.title}>{containerType}</h1>
             <div className={style.cards_container}>
-              {podcasts.map((a, key) => (
+              {podcasts?.map((a, key) => (
                 <Card key={key} content={a} cardType={a.type} />
               ))}
             </div>
@@ -102,7 +105,7 @@ export default function SeeAll() {
           <div className={style.wrapper}>
             <h1 className={style.title}>{containerType}</h1>
             <div className={style.cards_container}>
-              {savedAlbums.map((a, key) => (
+              {savedAlbums?.map((a, key) => (
                 <Card key={key} content={a} cardType={a.type} />
               ))}
             </div>
@@ -141,6 +144,18 @@ export default function SeeAll() {
       );
       break;
     default:
-      break;
+      return (
+        <div className={style.main_container}>
+          <Navbar />
+          <div className={style.wrapper}>
+            <h1 className={style.title}>{containerType}</h1>
+            <p>
+              KKJJJ ENCONTRASTE UN BUG (?) SI SABES COMO SOLUCIONARLO MANDAME UN
+              MENSAJE Y SINO VOLVÉ PARA ATRÁS Y RECARGA LA PÁGINA. MUCHAS
+              GRACIAS VUELVA PRONTOS
+            </p>
+          </div>
+        </div>
+      );
   }
 }

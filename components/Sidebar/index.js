@@ -17,9 +17,8 @@ const Sidebar = () => {
   const baseUrl = `https://accounts.spotify.com/authorize`;
   const clientId = `3e8826969cda44dd9759e854441c1de8`;
   const responseType = `token`;
-  const redirectUri = `http://localhost:3000/dashboard`;
-
-  console.log(router);
+  const redirectUriDev = `http://localhost:3000/dashboard`;
+  const redirectUriProd = `https://misikit.samuelebenitez.vercel.app/dashboard`;
 
   // http://localhost:3000/dashboard#access_token=BQBMJgU0hTNSLA_Q4LM5oQX3f2YyNi_OM30iCHir7Aur0DJVjK5QX6eUH6ClTq-GyDiEc9Gcsw36LnCVfwdZI3mEql3xgPb9qCo8kdL4LJH6CwakTpNataSIeBOCcVnWVIzP7IWTt9CL80_0Hz_dt3RofDfLQYjAR_-nyAVStfs&token_type=Bearer&expires_in=3600
 
@@ -29,7 +28,7 @@ const Sidebar = () => {
         <span
           onClick={() =>
             router.push(
-              `${redirectUri}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
+              `${redirectUriProd}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
             )
           }
           className={style.banner}
@@ -43,7 +42,7 @@ const Sidebar = () => {
           <span
             onClick={() =>
               router.push(
-                `${redirectUri}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
+                `${redirectUriProd}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
               )
             }
             className={style.li_icon}
