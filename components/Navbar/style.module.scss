@@ -10,6 +10,11 @@
   z-index: 2;
 
   transition: background-color 200ms linear;
+  @media (max-width: 768px) {
+    margin: 0 1.5em;
+    width: 100vw;
+  }
+
   .nav_container_items {
     display: flex;
     height: 40px;
@@ -39,8 +44,13 @@
       cursor: pointer;
       justify-content: space-between;
       transition: 0.2s;
+      margin: 0 2em;
       &:hover {
         background-color: #282828;
+      }
+      @media (max-width: 768px) {
+        width: 32px;
+        margin: 0 6em;
       }
 
       .items_user_pic {
@@ -71,5 +81,8 @@
     right: 2.5%;
     z-index: 3;
     transition: 1s;
+    @media (max-width: 768px) {
+      right: 15%;
+    }
   }
 }

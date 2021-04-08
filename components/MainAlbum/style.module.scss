@@ -4,7 +4,7 @@ $WorkSans: "Work Sans", sans-serif;
 .cardInfo__container {
   overflow-y: overlay;
   overflow-x: hidden;
-  max-height: 527px;
+  max-height: 85vh;
 
   width: calc(100vw - 232px);
   &::-webkit-scrollbar {

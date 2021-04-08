@@ -4,6 +4,7 @@
   padding-top: 24px;
   display: flex;
   flex-direction: column;
+  height: 85vh;
   .sidebar_banner_container {
     width: 135px;
     margin: 0 20px;
@@ -125,7 +126,7 @@
   .playlists_list {
     color: white;
     overflow-y: scroll;
-    height: 150px;
+    height: 26vh;
     padding: 0 23px;
 
     scroll-margin: 0 50px;

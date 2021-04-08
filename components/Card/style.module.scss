@@ -9,8 +9,15 @@
   background-color: #242424;
   cursor: pointer;
   transition: 0.3s ease;
+  scroll-snap-align: center;
   &:hover {
     background-color: #333333;
+  }
+  @media (max-width: 768px) {
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   .card_img {
@@ -24,6 +31,10 @@
     &:hover .button_repro {
       opacity: 1;
       transform: translateY(-30%);
+    }
+    @media (max-width: 768px) {
+      width: 90%;
+      height: 60%;
     }
 
     .button_repro {
@@ -52,6 +63,9 @@
     &:hover {
       text-decoration: underline;
     }
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
   .p_content {
     display: flex;
@@ -60,6 +74,10 @@
     overflow: hidden;
     margin: 0;
     padding: 0;
+    @media (max-width: 768px) {
+      display: none;
+      text-align: center;
+    }
 
     .p {
       margin: 0 5px 0 0;

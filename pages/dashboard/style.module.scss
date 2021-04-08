@@ -2,5 +2,44 @@
   overflow: hidden;
   .dashboard {
     display: flex;
+    .sidebar {
+      display: block;
+    }
+
+    .main {
+      height: 85vh;
+    }
+  }
+  .player_container {
+    .player {
+      display: block;
+    }
+    .player_mobile {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard_container {
+    overflow: hidden;
+    .dashboard {
+      display: flex;
+      .sidebar {
+        display: none;
+      }
+
+      .main {
+        height: 85vh;
+      }
+    }
+    .player_container {
+      .player {
+        display: none;
+      }
+      .player_mobile {
+        display: block;
+      }
+    }
   }
 }
