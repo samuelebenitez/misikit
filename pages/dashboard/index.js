@@ -1,28 +1,14 @@
 import Sidebar from "../../components/Sidebar";
 import Player from "../../components/Player";
-import Main from "../../components/Main";
 import MenuMobile from "../../components/MenuMobile";
 import style from "./style.module.scss";
+import Main from "../../components/Main";
+import Layout from "../../components/Layout";
 
 export default function Dashboard() {
   return (
-    <div className={style.dashboard_container}>
-      <div className={style.dashboard}>
-        <section className={style.sidebar}>
-          <Sidebar />
-        </section>
-        <section className={style.main}>
-          <Main />
-        </section>
-      </div>
-      <div className={style.player_container}>
-        <section className={style.player}>
-          <Player />
-        </section>
-        <section className={style.player_mobile}>
-          <MenuMobile />
-        </section>
-      </div>
-    </div>
+    <Layout>
+      <Main />
+    </Layout>
   );
 }

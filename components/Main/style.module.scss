@@ -8,6 +8,7 @@
   @media (max-width: 768px) {
     width: 100vw;
     background: rgb(0, 0, 0);
+    scroll-margin: 0;
     background: linear-gradient(
       -40deg,
       rgba(0, 0, 0, 1) 70%,
@@ -18,11 +19,18 @@
     background-color: #181818;
     width: 17px;
     margin: 0 2px;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   &::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid #181818;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
+
   .wrapper {
     padding-top: 4em;
     height: 100vh;

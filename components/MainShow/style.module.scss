@@ -7,9 +7,15 @@ $WorkSans: "Work Sans", sans-serif;
   max-height: 85vh;
 
   width: calc(100vw - 232px);
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
   &::-webkit-scrollbar {
     transition: 1s;
     z-index: 10;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &:hover {
@@ -31,51 +37,22 @@ $WorkSans: "Work Sans", sans-serif;
 
   .top_container {
     width: calc(100vw - 232px);
-    height: 54vh;
     scroll-margin: 0 50px;
     background-size: cover;
     background-position-y: 40%;
     background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: multiply;
-
-    .wrapper {
-      background-position: center;
-
-      padding-top: 8em;
-
-      .title {
-        color: white;
-        font-size: 6.5em;
-        padding-left: 0.2em;
-        font-weight: 700;
-        font-family: "Work Sans", sans-serif;
-        letter-spacing: -8px;
-        margin: 0;
-        // text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000,
-        // 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-      .subtitle {
-        color: white;
-        font-family: "Work Sans", sans-serif;
-        padding-left: 2em;
-        font-size: 1em;
-        letter-spacing: -1px;
-      }
-      .cards_container {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1.5em;
-        padding: 0 2em 0.5em 2em;
-      }
+    @media (max-width: 768px) {
+      width: 100vw;
     }
+
     .wrapper_album {
       display: flex;
       align-items: center;
       background: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
       .album_img {
         height: 230px;
         margin: 6em 2em 1em 2em;
@@ -85,6 +62,10 @@ $WorkSans: "Work Sans", sans-serif;
         color: white;
         font-family: $WorkSans;
         margin-top: 7.6em;
+        @media (max-width: 768px) {
+          text-align: centeR;
+          margin: 0.5em;
+        }
         .album_type {
           text-transform: uppercase;
           font-weight: 500;
@@ -96,9 +77,15 @@ $WorkSans: "Work Sans", sans-serif;
           font-weight: 1900;
           margin: 0 0 0.3em 0;
           transform: scaleY(1.1);
+          @media (max-width: 768px) {
+            font-size: 2em;
+          }
         }
         .album_info__ {
           display: flex;
+          @media (max-width: 768px) {
+            font-size: small;
+          }
           .artists {
             font-weight: 500;
             color: white;

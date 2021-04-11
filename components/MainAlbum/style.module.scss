@@ -7,9 +7,22 @@ $WorkSans: "Work Sans", sans-serif;
   max-height: 85vh;
 
   width: calc(100vw - 232px);
+  @media (max-width: 768px) {
+    width: 100vw;
+    background: rgb(0, 0, 0);
+    scroll-margin: 0;
+    background: linear-gradient(
+      -40deg,
+      rgba(0, 0, 0, 1) 70%,
+      rgba(252, 5, 5, 1) 100%
+    );
+  }
   &::-webkit-scrollbar {
     transition: 1s;
     z-index: 10;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &:hover {
@@ -30,53 +43,22 @@ $WorkSans: "Work Sans", sans-serif;
   }
 
   .top_container {
-    width: calc(100vw - 232px);
-    height: 54vh;
+    width: 100%;
     scroll-margin: 0 50px;
     background-size: cover;
     background-position-y: 40%;
     background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: multiply;
 
-    .wrapper {
-      background-position: center;
-
-      padding-top: 8em;
-
-      .title {
-        color: white;
-        font-size: 6.5em;
-        padding-left: 0.2em;
-        font-weight: 700;
-        font-family: "Work Sans", sans-serif;
-        letter-spacing: -8px;
-        margin: 0;
-        // text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000,
-        // 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-      .subtitle {
-        color: white;
-        font-family: "Work Sans", sans-serif;
-        padding-left: 2em;
-        font-size: 1em;
-        letter-spacing: -1px;
-        border: 1px solid red;
-      }
-      .cards_container {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1.5em;
-        padding: 0 2em 0.5em 2em;
-      }
-    }
     .wrapper_album {
       display: flex;
       align-items: center;
       background: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
+      @media (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+      }
+
       .album_img {
         height: 230px;
         margin: 6em 2em 1em 2em;
@@ -86,6 +68,10 @@ $WorkSans: "Work Sans", sans-serif;
         color: white;
         font-family: $WorkSans;
         margin-top: 7.6em;
+        @media (max-width: 768px) {
+          text-align: center;
+          margin: 0.5em;
+        }
         .album_type {
           text-transform: uppercase;
           font-weight: 500;
@@ -102,6 +88,10 @@ $WorkSans: "Work Sans", sans-serif;
           overflow: hidden;
           text-overflow: ellipsis;
           word-break: break-all;
+          @media (max-width: 768px) {
+            margin: 0;
+            padding: 0;
+          }
         }
         .album_info__ {
           display: flex;
@@ -125,6 +115,9 @@ $WorkSans: "Work Sans", sans-serif;
       margin: 0 2em 2em 2em;
       color: rgba(255, 255, 255, 0.685);
       padding: 0 2em;
+      @media (max-width: 768px) {
+        padding: 0;
+      }
       .list_head {
         display: flex;
         justify-content: space-between;
@@ -204,98 +197,6 @@ $WorkSans: "Work Sans", sans-serif;
           color: white;
         }
       }
-    }
-    .follow_container {
-      display: flex;
-      align-items: center;
-      .play_icon {
-        border-radius: 50%;
-        background-color: #1db954;
-        border: none;
-        width: 64px;
-        height: 64px;
-        margin: 2em;
-      }
-      .follow_button {
-        font-family: $WorkSans;
-        display: flex;
-        height: 20px;
-        border: 1px solid white;
-        background-color: transparent;
-        border-radius: 5px;
-        color: white;
-        font-weight: 600;
-        font-size: 0.8em;
-        padding: 15px;
-        align-items: center;
-        letter-spacing: 1px;
-      }
-      .dot_tree {
-        margin: 1em 1.5em;
-        color: rgba(255, 255, 255, 0.6);
-        font-weight: bolder;
-        letter-spacing: 5px;
-        padding-bottom: 10px;
-        font-size: 1.2em;
-        transition: 0.5s;
-        cursor: default;
-        &:hover {
-          color: white;
-        }
-      }
-    }
-    .track_list {
-      margin: 0 2em;
-      .title {
-        color: white;
-        font-size: 1.5em;
-      }
-      ol {
-        padding: 0;
-        margin: 0 1.5em;
-        width: 900px;
-        display: fleX;
-        flex-direction: column;
-
-        li {
-          display: flex;
-          padding: 0 1em;
-          border-radius: 5px;
-          align-items: center;
-          height: 55px;
-
-          filter: brightness(0.7);
-          &:hover {
-            background-color: rgba(255, 255, 255, 0.082);
-            filter: brightness(1);
-          }
-
-          .track_number {
-            color: white;
-            padding: 0;
-            width: 40px;
-          }
-          .track_img {
-            width: 40px;
-            height: 40px;
-            margin: 1em;
-          }
-          .track_name {
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
-            text-overflow: ellipsis;
-            overflow: hidden;
-          }
-          .track_duration {
-            color: rgba(255, 255, 255, 0.9);
-            margin-left: auto;
-            font-weight: 500;
-          }
-        }
-      }
-    }
-    .albums_container {
-      padding: 2em 0;
     }
   }
 }

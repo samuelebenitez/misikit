@@ -2,6 +2,7 @@ import Sidebar from "../../components/Sidebar";
 import Player from "../../components/Player";
 import style from "../dashboard/style.module.scss";
 import CardInfo from "../../components/CardInfo";
+import Layout from "../../components/Layout";
 
 export default function cardId(props) {
   const {
@@ -14,21 +15,9 @@ export default function cardId(props) {
     artistRelatedArtists,
   } = props;
   return (
-    <div className={style.dashboard_container}>
-      <div className={style.dashboard}>
-        <section className={style.sidebar}>
-          <Sidebar />
-        </section>
-        <section className={style.main}>
-          <CardInfo cardData={props} />
-        </section>
-      </div>
-      <div className={style.player_container}>
-        <section className={style.player}>
-          <Player />
-        </section>
-      </div>
-    </div>
+    <Layout>
+      <CardInfo cardData={props} />
+    </Layout>
   );
 }
 

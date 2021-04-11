@@ -61,7 +61,7 @@ export default function MainTrack({ cardData, convierteMSaMIN }) {
                 </div>
                 <div className={style.artists}>
                   {artists?.map((a, key) => (
-                    <p>{a.name} ·</p>
+                    <p key={key}>{a.name} ·</p>
                   ))}
                 </div>
               </div>

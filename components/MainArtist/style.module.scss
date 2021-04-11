@@ -7,9 +7,15 @@ $WorkSans: "Work Sans", sans-serif;
   max-height: 85vh;
 
   width: calc(100vw - 232px);
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   &::-webkit-scrollbar {
     transition: 1s;
     z-index: 10;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &:hover {
@@ -31,12 +37,15 @@ $WorkSans: "Work Sans", sans-serif;
 
   .top_container {
     width: calc(100vw - 232px);
-    height: 54vh;
     scroll-margin: 0 50px;
+    height: 50vh;
     background-size: cover;
     background-position-y: 40%;
     background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: multiply;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
     .wrapper {
       background-position: center;
@@ -56,6 +65,12 @@ $WorkSans: "Work Sans", sans-serif;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        @media (max-width: 768px) {
+          font-size: 2.5em;
+          white-space: normal;
+          margin: 0 0.5em;
+          letter-spacing: 0;
+        }
       }
       .subtitle {
         color: white;
@@ -72,118 +87,11 @@ $WorkSans: "Work Sans", sans-serif;
         padding: 0 2em 0.5em 2em;
       }
     }
-    .wrapper_album {
-      display: flex;
-      align-items: center;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
-      .album_img {
-        height: 230px;
-        margin: 6em 2em 1em 2em;
-        box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.6);
-      }
-      .album_info {
-        color: white;
-        font-family: $WorkSans;
-        margin-top: 7.6em;
-        .album_type {
-          text-transform: uppercase;
-          font-weight: 500;
-          font-size: 0.8em;
-          margin: 0;
-        }
-        .album_title {
-          font-size: 2.7em;
-          font-weight: 1900;
-          margin: 0 0 0.3em 0;
-          transform: scaleY(1.1);
-        }
-        .album_info__ {
-          display: flex;
-          .artists {
-            font-weight: 500;
-            color: white;
-          }
-          p {
-            margin: 0px 5px 0px 0px;
-            color: rgba(255, 255, 255, 0.61);
-          }
-        }
-      }
-    }
   }
   .tracks_container {
     background: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
     padding-bottom: 3em;
-    .tracks_list {
-      margin: 0 2em 2em 2em;
-      color: rgba(255, 255, 255, 0.685);
-      padding: 0 2em;
-      .list_head {
-        display: flex;
-        justify-content: space-between;
-        div {
-          display: flex;
-          .first_column {
-            margin: 1em 3em 1em 1em;
-          }
-        }
-      }
-      .list_content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 1em;
-        div {
-          display: flex;
-          div {
-            display: grid;
-            div {
-              h4 {
-                margin: 0;
-                color: white;
-                font-weight: 400;
-              }
-            }
-            .artists {
-              display: flex;
-              p {
-                margin: 0 0.3em 0 0;
-                font-size: 0.8em;
-              }
-            }
-          }
-          .first_column {
-            margin: 1em 3em 1em 1em;
-          }
-        }
-      }
-    }
-    .info_container {
-      display: flex;
-      align-items: center;
 
-      .play_icon {
-        border-radius: 50%;
-        background-color: #1db954;
-        border: none;
-        width: 64px;
-        height: 64px;
-        margin: 2em;
-      }
-      .like_icon {
-        stroke: white;
-      }
-      .dot_tree {
-        color: rgba(255, 255, 255, 0.671);
-        letter-spacing: 5px;
-        margin: 1em 1em 2em 2em;
-        transition: 0.1s;
-        cursor: context-menu;
-        &:hover {
-          color: white;
-        }
-      }
-    }
     .follow_container {
       display: flex;
       align-items: center;
@@ -225,6 +133,9 @@ $WorkSans: "Work Sans", sans-serif;
     }
     .track_list {
       margin: 0 2em;
+      @media (max-width: 768px) {
+        margin: 0 1em;
+      }
       .title {
         color: white;
         font-size: 1.5em;
@@ -232,9 +143,12 @@ $WorkSans: "Work Sans", sans-serif;
       ol {
         padding: 0;
         margin: 0 1.5em;
-        width: 900px;
         display: fleX;
         flex-direction: column;
+        @media (max-width: 768px) {
+          margin: 0;
+          width: 92vw;
+        }
 
         li {
           display: flex;
@@ -244,6 +158,10 @@ $WorkSans: "Work Sans", sans-serif;
           height: 55px;
 
           filter: brightness(0.7);
+          @media (max-width: 768px) {
+            padding: 0 0.5em;
+          }
+
           &:hover {
             background-color: rgba(255, 255, 255, 0.082);
             filter: brightness(1);
@@ -253,28 +171,44 @@ $WorkSans: "Work Sans", sans-serif;
             color: white;
             padding: 0;
             width: 40px;
+            @media (max-width: 768px) {
+              width: auto;
+            }
           }
           .track_img {
             width: 40px;
             height: 40px;
             margin: 1em;
           }
-          .track_name {
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
-            text-overflow: ellipsis;
-            overflow: hidden;
-          }
-          .track_duration {
-            color: rgba(255, 255, 255, 0.9);
-            margin-left: auto;
-            font-weight: 500;
+          div {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            .track_name {
+              color: rgba(255, 255, 255, 0.9);
+              font-weight: 500;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              @media (max-width: 768px) {
+                font-size: small;
+              }
+            }
+            .track_duration {
+              color: rgba(255, 255, 255, 0.9);
+              margin-left: auto;
+              font-weight: 500;
+              @media (max-width: 768px) {
+                margin-left: 0;
+                font-size: small;
+              }
+            }
           }
         }
       }
     }
     .albums_container {
       padding: 2em 0;
+      width: 100vw;
     }
   }
 }

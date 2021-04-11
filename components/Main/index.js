@@ -1,4 +1,3 @@
-import Navbar from "../Navbar";
 import style from "./style.module.scss";
 import CardsContainer from "../CardsContainer";
 import { useContext } from "react";
@@ -20,7 +19,6 @@ export default function Main() {
 
   return (
     <div className={style.main_container}>
-      <Navbar />
       <div className={style.wrapper}>
         <CardsContainer
           label="Tus artistas"

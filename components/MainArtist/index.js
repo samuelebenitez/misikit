@@ -55,11 +55,13 @@ export default function MainArtist({ cardData, convierteMSaMIN }) {
                     src={track.album.images[0].url}
                     alt=""
                   />
-                  <p className={style.track_name}>{track.name}</p>
+                  <div>
+                    <p className={style.track_name}>{track.name}</p>
 
-                  <p className={style.track_duration}>
-                    {convierteMSaMIN(track.duration_ms)}
-                  </p>
+                    <p className={style.track_duration}>
+                      {convierteMSaMIN(track.duration_ms)}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ol>
@@ -71,6 +73,8 @@ export default function MainArtist({ cardData, convierteMSaMIN }) {
               accessToken={accessToken}
               artistId={id}
             />
+          </div>
+          <div className={style.albums_container}>
             <CardsContainer
               label={`Artistas relacionados`}
               content={artistRelatedArtists}
