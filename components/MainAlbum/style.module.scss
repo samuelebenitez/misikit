@@ -91,11 +91,16 @@ $WorkSans: "Work Sans", sans-serif;
           @media (max-width: 768px) {
             margin: 0;
             padding: 0;
+            font-size: 2em;
           }
         }
         .album_info__ {
           display: flex;
           padding: 0 0 1em 0;
+          @media (max-width: 768px) {
+            font-size: 0.7em;
+            margin: 1em 0.5em;
+          }
           .artists {
             font-weight: 500;
             color: white;

@@ -69,6 +69,7 @@ export default function MainShow({ cardData, convierteMSaMIN }) {
                       {episode.description}
                     </p>
                     <div className={style.episode_buttons}>
+                      <img src={episode.images[0].url} alt="" />
                       <button>{playIcon1}</button>
                       <p>{episode.release_date} </p>
                       <p>·</p>

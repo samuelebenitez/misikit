@@ -141,10 +141,16 @@ $WorkSans: "Work Sans", sans-serif;
 
     .episodes_list {
       margin: 0 2em;
+      @media (max-width: 768px) {
+        margin: 0.2em;
+      }
       .title_container {
         .title {
           color: white;
           font-size: 1.5em;
+          @media (max-width: 768px) {
+            margin: 1em;
+          }
         }
       }
       .list_content {
@@ -159,8 +165,13 @@ $WorkSans: "Work Sans", sans-serif;
           display: flex;
           overflow: hidden;
           border-radius: 5px;
+
           &:hover {
             background-color: rgba(128, 128, 128, 0.658);
+          }
+          @media (max-width: 768px) {
+            padding: 1em;
+            height: 35vh;
           }
 
           .episode_img_container {
@@ -168,15 +179,25 @@ $WorkSans: "Work Sans", sans-serif;
               height: 120px;
               border-radius: 5px;
               margin-right: 1.5em;
+              @media (max-width: 768px) {
+                height: 70px;
+                display: none;
+              }
             }
           }
           .episode_info_container {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
+            @media (max-width: 768px) {
+              justify-content: space-between;
+            }
             .episode_info_title {
               margin: 0;
               color: white;
+              @media (max-width: 768px) {
+                font-size: 1em;
+              }
             }
             .episode_info_descrip {
               margin: 0;
@@ -188,6 +209,14 @@ $WorkSans: "Work Sans", sans-serif;
             .episode_buttons {
               display: flex;
               align-items: center;
+              img {
+                display: none;
+                @media (max-width: 768px) {
+                  height: 80px;
+                  margin: 1em 1em 0 0;
+                  display: block;
+                }
+              }
               button {
                 border: none;
                 background-color: white;
