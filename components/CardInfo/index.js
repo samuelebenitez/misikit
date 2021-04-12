@@ -1,38 +1,12 @@
-import style from "./style.module.scss";
-import Navbar from "../Navbar";
-import CardsContainer from "../CardsContainer";
+import Head from "next/head";
 import MainArtist from "../MainArtist";
 import MainTrack from "../MainTrack";
 import MainShow from "../MainShow";
 import MainAlbum from "../MainAlbum";
-import {
-  playIcon1,
-  fillLikeIcon,
-  likeIcon,
-  durationIcon,
-} from "../../public/icons-svg";
 
 export default function CardInfo({ cardData }) {
-  const {
-    cardtype,
-    infoFollow,
-    dataTopTracks,
-    data,
-    artistAlbums,
-    artistRelatedArtists,
-  } = cardData;
-  const {
-    images,
-    name,
-    album,
-    artists,
-    publisher,
-    id,
-    followers,
-    duration_ms,
-    description,
-    episodes,
-  } = data;
+  const { cardtype } = cardData;
+
   // 0NhXCoKVynm5F7DgXSfqxv
 
   //Funcion para pasar milisegundos a segundos (la API de spoty trae
@@ -45,20 +19,42 @@ export default function CardInfo({ cardData }) {
   switch (cardtype) {
     case "artists":
       return (
-        <MainArtist cardData={cardData} convierteMSaMIN={convierteMSaMIN} />
+        <>
+          <Head>
+            <title>Artista || Musikit</title>
+          </Head>
+          <MainArtist cardData={cardData} convierteMSaMIN={convierteMSaMIN} />
+        </>
       );
       break;
     case "tracks":
       return (
-        <MainTrack cardData={cardData} convierteMSaMIN={convierteMSaMIN} />
+        <>
+          <Head>
+            <title>Track || Musikit</title>
+          </Head>
+          <MainTrack cardData={cardData} convierteMSaMIN={convierteMSaMIN} />
+        </>
       );
       break;
     case "shows":
-      return <MainShow cardData={cardData} convierteMSaMIN={convierteMSaMIN} />;
+      return (
+        <>
+          <Head>
+            <title>Podcast || Musikit</title>
+          </Head>
+          <MainShow cardData={cardData} convierteMSaMIN={convierteMSaMIN} />
+        </>
+      );
       break;
     case "albums":
       return (
-        <MainAlbum cardData={cardData} convierteMSaMIN={convierteMSaMIN} />
+        <>
+          <Head>
+            <title>Album || Musikit</title>
+          </Head>
+          <MainAlbum cardData={cardData} convierteMSaMIN={convierteMSaMIN} />
+        </>
       );
       break;
 

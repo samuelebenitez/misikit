@@ -15,6 +15,7 @@
     justify-content: space-around;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+
     .like_icon {
       svg {
         @include icons-style;
@@ -23,6 +24,7 @@
     .song_info {
       display: flex;
       align-items: center;
+      font-size: 0.9em;
       .song_name {
         text-transform: capitalize;
         color: white;
@@ -33,6 +35,11 @@
         color: rgba(255, 255, 255, 0.568);
         font-weight: 600;
         margin: 0 0.3em;
+        width: 25vw;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: scroll;
+        display: flex;
       }
     }
     .play_icon {

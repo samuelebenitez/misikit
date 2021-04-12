@@ -1,19 +1,7 @@
-import Sidebar from "../../components/Sidebar";
-import Player from "../../components/Player";
-import style from "../dashboard/style.module.scss";
 import CardInfo from "../../components/CardInfo";
 import Layout from "../../components/Layout";
 
 export default function cardId(props) {
-  const {
-    data,
-    cardtype,
-    dataTopTracks,
-    dataTrackInfo,
-    infoFollow,
-    artistAlbums,
-    artistRelatedArtists,
-  } = props;
   return (
     <Layout>
       <CardInfo cardData={props} />

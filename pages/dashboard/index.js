@@ -4,11 +4,18 @@ import MenuMobile from "../../components/MenuMobile";
 import style from "./style.module.scss";
 import Main from "../../components/Main";
 import Layout from "../../components/Layout";
+import Head from "next/head";
 
 export default function Dashboard() {
   return (
-    <Layout>
-      <Main />
-    </Layout>
+    <>
+      <Head>
+        <title>Home || Musikit</title>
+      </Head>
+
+      <Layout>
+        <Main />
+      </Layout>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import DataSpotyContext from "../../contexts/dataspotycontext";
 import { useContext } from "react";
-import style from "../Main/style.module.scss";
+import style from "./style.module.scss";
 import Navbar from "../../components/Navbar";
 import { useRouter } from "next/router";
 import Card from "../../components/Card";
