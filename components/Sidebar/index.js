@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./style.module.scss";
+import Link from "next/link";
 import {
   homeIcon,
   searchIcon,
@@ -14,46 +15,41 @@ import { useRouter } from "next/router";
 const Sidebar = () => {
   const { userPlaylists, accessToken } = useContext(DataSpotyContext);
   const router = useRouter();
-  const baseUrl = `https://accounts.spotify.com/authorize`;
-  const clientId = `3e8826969cda44dd9759e854441c1de8`;
-  const responseType = `token`;
   const redirectUriDev = `http://localhost:3000/dashboard`;
   const redirectUriProd = `https://misikit.samuelebenitez.vercel.app/dashboard`;
+  const searchUrlDev = `http://localhost:3000/search`;
+  const searchUrlProd = `https://misikit.samuelebenitez.vercel.app/search`;
 
   // http://localhost:3000/dashboard#access_token=BQBMJgU0hTNSLA_Q4LM5oQX3f2YyNi_OM30iCHir7Aur0DJVjK5QX6eUH6ClTq-GyDiEc9Gcsw36LnCVfwdZI3mEql3xgPb9qCo8kdL4LJH6CwakTpNataSIeBOCcVnWVIzP7IWTt9CL80_0Hz_dt3RofDfLQYjAR_-nyAVStfs&token_type=Bearer&expires_in=3600
 
   return (
     <section className={style.sidebar_container}>
-      <div className={style.sidebar_banner_container}>
-        <span
-          onClick={() =>
-            router.push(
-              `${redirectUriProd}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
-            )
-          }
-          className={style.banner}
-        >
-          {spotifyLogo}
-        </span>
-      </div>
+      <Link
+        href={`${redirectUriProd}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`}
+      >
+        <div className={style.sidebar_banner_container}>
+          <span className={style.banner}>{spotifyLogo}</span>
+        </div>
+      </Link>
 
       <ul className={style.sidebar_buttons}>
-        <li className={style.li}>
-          <span
-            onClick={() =>
-              router.push(
-                `${redirectUriProd}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`
-              )
-            }
-            className={style.li_icon}
-          >
-            {homeIcon}
-          </span>{" "}
-          Inicio
-        </li>
-        <li className={style.li}>
-          <span className={style.li_icon}>{searchIcon}</span> Buscar
-        </li>
+        <Link
+          href={`${redirectUriProd}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`}
+        >
+          <li className={style.li}>
+            <span className={style.li_icon}>{homeIcon}</span>
+            Inicio
+          </li>
+        </Link>
+
+        <Link
+          href={`${searchUrlProd}#access_token=${accessToken}&token_type=Bearer&expires_in=3600`}
+        >
+          <li className={style.li}>
+            <span className={style.li_icon}>{searchIcon}</span> Buscar
+          </li>
+        </Link>
+
         <li className={style.li}>
           <span className={style.li_icon}>{libraryIcon}</span> Tu biblioteca
         </li>

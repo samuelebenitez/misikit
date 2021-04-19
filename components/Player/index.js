@@ -30,7 +30,9 @@ export default function Player() {
           <p className={style.song_name}>{lastSongPlayed?.name}</p>
           <div className={style.artists_container}>
             {lastSongPlayed?.artists.map((a, key) => (
-              <p className={style.artists}>{a.name} ·</p>
+              <p key={key} className={style.artists}>
+                {a.name} ·
+              </p>
             ))}
           </div>
         </div>

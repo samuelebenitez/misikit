@@ -24,22 +24,34 @@
     .song_info {
       display: flex;
       align-items: center;
-      font-size: 0.9em;
+      font-size: 0.8em;
+      justify-content: center;
       .song_name {
         text-transform: capitalize;
         color: white;
         font-weight: 600;
+        white-space: nowrap;
+        overflow: scroll;
+        width: 25vw;
+        min-width: 100px;
+      }
+      p {
+        margin: 0 1em;
+        color: white;
       }
       .song_artist {
         text-transform: capitalize;
         color: rgba(255, 255, 255, 0.568);
         font-weight: 600;
         margin: 0 0.3em;
-        width: 25vw;
+        max-width: 25vw;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: scroll;
         display: flex;
+        text-align: center;
+        display: grid;
+        grid-auto-flow: column;
       }
     }
     .play_icon {

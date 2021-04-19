@@ -17,19 +17,19 @@ export default function Home() {
       </Head>
       <div className={style.login_container}>
         <button className={style.login_button}>
-          <a
+          {/* <a
             className={style.login_link}
             href={`${baseUrl}?client_id=${clientId}&scope=user-top-read user-read-recently-played user-library-read user-follow-read&response_type=${responseType}&redirect_uri=${redirectUriDev}`}
           >
             Touch me for login!
-          </a>
+          </a> */}
 
-          {/* <a
-          className={style.login_link}
-          href={`${baseUrl}?client_id=${clientId}&scope=user-top-read user-read-recently-played user-library-read user-follow-read&response_type=${responseType}&redirect_uri=${redirectUriProd}`}
-        >
-          Touch me for login!
-        </a> */}
+          <a
+            className={style.login_link}
+            href={`${baseUrl}?client_id=${clientId}&scope=user-top-read user-read-recently-played user-library-read user-follow-read&response_type=${responseType}&redirect_uri=${redirectUriProd}`}
+          >
+            Touch me for login!
+          </a>
         </button>
       </div>
     </>

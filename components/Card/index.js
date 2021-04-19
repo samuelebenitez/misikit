@@ -16,7 +16,7 @@ export default function Card({ content, cardType }) {
             <div
               className={style.card_img}
               style={{
-                backgroundImage: `url(${images[1].url})`,
+                backgroundImage: `url(${images[1]?.url})`,
                 borderRadius: "50%",
               }}
             >
@@ -40,7 +40,7 @@ export default function Card({ content, cardType }) {
             <div
               className={style.card_img}
               style={{
-                backgroundImage: `url(${album.images[1].url})`,
+                backgroundImage: `url(${album.images[1]?.url})`,
                 borderRadius: "1.5%",
               }}
             >

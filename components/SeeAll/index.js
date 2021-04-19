@@ -19,9 +19,6 @@ export default function SeeAll() {
   const idcontainer = router?.query.idcontainer;
   const containerType = idcontainer?.split(/[&]/)[0];
   const artistId = idcontainer?.split(/[&]/)[2];
-  console.log(router);
-  console.log(containerType);
-  console.log(artistId);
 
   const [artistAlbums, setArtistsAlbums] = useState();
   const [relatedArtists, setRelatedArtists] = useState();
